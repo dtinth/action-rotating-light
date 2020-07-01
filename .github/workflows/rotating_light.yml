@@ -6,4 +6,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - run: git grep -n 🚨
+    - run: git grep -n 🚨 | sed -E 's/^([^:]+):([^:]+):\s*/::error file=\1,line=\2::/'
