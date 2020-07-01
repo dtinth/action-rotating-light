@@ -1,0 +1,9 @@
+name: CI
+on:
+  push: {}
+jobs:
+  check_rotating_lights:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: git grep -l 🚨
