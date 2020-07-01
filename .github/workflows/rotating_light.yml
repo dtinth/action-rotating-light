@@ -9,4 +9,5 @@ jobs:
     # Report uses of rotating light
     - run: git grep -n $'\xf0\x9f\x9a\xa8' | sed -E 's/^([^:]+):([^:]+):\s*/::error file=\1,line=\2::/'
     # Fail build if rotating light is used
-    - run: "! git grep -q $'\xf0\x9f\x9a\xa8'"
+    - run: |
+        ! git grep -q $'\xf0\x9f\x9a\xa8'
